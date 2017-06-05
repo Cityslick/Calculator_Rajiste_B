@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+
+	<style type="text/css">
+
+	body {
+		background-image: url("images/wood-table.jpg");
+		background-size: cover;
+		background-position: center center;
+	}
+
+	h2 {
+		font-size: 30pt;
+		color: white;
+		font-family: "Orbitron", sans-serif;
+		position: absolute;
+		left: 22%;
+		top: 12%;
+	}
+
+	h3 {
+		font-size: 20pt;
+		color: white;
+		font-family: "Orbitron", sans-serif;
+		position: absolute;
+		left: 27%;
+		top: 82%;
+		letter-spacing: 2px;
+	}
+
+	span {
+		color: red;
+		font-size: 40pt;
+	}
+
+	#frame {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+
+	}
+
+	#mpc {
+		display: flex;	
+		height: 80vh;
+		width: 80%;
+		border-right: 10px solid red;
+		border-left: 10px solid red;
+		justify-content: left;
+		align-items: center;
+		background-image: url("images/blue-bgr.jpg");
+		border-radius: 5%;
+	}
+
+	#calculator {
+		height: 70%;
+		width: 100%;
+		padding-left: 60px;
+		position: relative;
+	}
+
+	#flex-columns {
+		display: flex;
+		flex-direction: row;
+		width: 600px;
+		height: 500px;
+	}
+
+	#input {
+		display: flex;
+		width: 600px;
+		height: 25%;
+		background: orange;
+	}
+
+	#column1 {
+		display: flex;
+		background-color: red;
+		width: 200px;
+		height: 75%;
+		flex-direction: column;
+		justify-content: space-around;
+	}
+
+	.numbers {
+		display: flex;
+		height: 60%;
+		width: 100%;
+		border: 3px solid black;
+		box-sizing: border-box;
+		justify-content: center;
+		align-items: center;
+		box-shadow: 0 10px #27496d;
+	}
+
+	#box {
+		box-shadow: inset 0 0 10px #C58713;
+	}
+
+	input {
+		display: flex;
+		justify-content: center;
+		font-size: 40pt;
+		width: 100%;
+		background-size: cover;
+		height: 10vh;
+		font-family: 'Orbitron', sans-serif;
+		border: 4px solid black; 
+	
+	}
+
+	#column2 {
+		display: flex;
+		flex-direction: column;
+		background-color: lightgreen;
+		width: 200px;
+		height: 75%;
+	}
+
+	#column3 {
+		display: flex;
+		flex-direction: column;
+		background-color: red;
+		width: 200px;
+		height: 75%;
+	}
+
+	#column4 {
+		display: flex;
+		flex-direction: column;
+		background-color: lightgreen;
+		width: 200px;
+		height: 75%;
+	}
+
+	#Cal {
+		width: 100%;
+		height: 100%;
+		background-color: #BAF835;
+		color: black;	
+		text-align: right;
+		border: 8px solid #20A8E7;
+	}
+
+
+	div #knob {
+		height: 5%;
+		width: 1%;
+		border-radius: 50%;
+		background-color: grey;
+		list-style-type: none;
+		padding: 20px;
+		box-shadow: inset 0 0 10px #FFF;
+	}
+
+	#twists1 {
+		position: absolute;
+		width: 400px;
+		right: 160px;
+		top: 100px;
+	}
+
+
+	li {
+		margin: 10px;
+		display: inline-block;
+	}
+
+	#ableton {
+		position: absolute;
+		height: 100px;
+		width: 400px;
+		background-image: url("images/recording.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		right: 190px;
+		top: 200px;
+	}
+
+	#freq {
+		position: absolute;
+		height: 100px;
+		width: 400px;
+		border: 2px solid black;
+		right: 190px;
+		top: 320px;
+		background-image: url("images/spectrum.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+
+	#slider-container {
+		position: absolute;
+		right: 400px;
+		top: 360px;
+		transform: rotate(90deg);
+	}
+
+	#slider-container2 {
+		position: absolute;
+		right: 340px;
+		top: 360px;
+		transform: rotate(90deg);
+	}
+	#slider-container3{
+		position: absolute;
+		right: 280px;
+		top: 360px;
+		transform: rotate(90deg);
+	}
+	#slider-container4 {
+		position: absolute;
+		right: 220px;
+		top: 360px;
+		transform: rotate(90deg);
+	}
+	#slider-container5 {
+		position: absolute;
+		right: 160px;
+		top: 360px;
+		transform: rotate(90deg);
+	}
+	#slider-container6 {
+		position: absolute;
+		right: 100px;
+		top: 360px;
+		transform: rotate(90deg);
+	}
+	#slider-container7 {
+		position: absolute;
+		right: 44px;
+		top: 360px;
+		transform: rotate(90deg);
+	}
+
+
+	#number-one:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-two:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-three:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-four:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-five:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-six:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-seven:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-eight:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-nine:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#number-zero:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#clear:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#plus:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#minus:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#divide:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#times:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#equal:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#decimal:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#avg-btn:active {
+		background: radial-gradient(#FF5733, orange, orange);
+	}
+	#blank-btn:active {
+		background: radial-gradient(red, red, red);
+	}
+
+	</style>
+
+
+
+</head>
+<body>
+<div id="ableton">
+</div>
+<div id="freq">
+
+</div>
+
+	<div>
+		<ul id="slider-container">
+		<li class="slider"><img src="https://developer.gnome.org/hig/stable/figures/ui-elements/sliders.svg"></li>
+		</ul>		
+	</div>
+
+	<div>
+		<ul id="slider-container2">
+		<li class="slider"><img src="https://developer.gnome.org/hig/stable/figures/ui-elements/sliders.svg"></li>
+		</ul>		
+	</div>
+
+	<div>
+		<ul id="slider-container3">
+		<li class="slider"><img src="https://developer.gnome.org/hig/stable/figures/ui-elements/sliders.svg"></li>
+		</ul>		
+	</div>
+
+	<div>
+		<ul id="slider-container4">
+		<li class="slider"><img src="https://developer.gnome.org/hig/stable/figures/ui-elements/sliders.svg"></li>
+		</ul>		
+	</div>
+
+	<div>
+		<ul id="slider-container5">
+		<li class="slider"><img src="https://developer.gnome.org/hig/stable/figures/ui-elements/sliders.svg"></li>
+		</ul>		
+	</div>
+
+	<div>
+		<ul id="slider-container6">
+		<li class="slider"><img src="https://developer.gnome.org/hig/stable/figures/ui-elements/sliders.svg"></li>
+		</ul>		
+	</div>
+
+	<div>
+		<ul id="slider-container7">
+		<li class="slider"><img src="https://developer.gnome.org/hig/stable/figures/ui-elements/sliders.svg"></li>
+		</ul>		
+	</div>
+
+	<div>
+		<ul id="twists1">
+		<li id="knob"></li>
+		<li id="knob"></li>
+		<li id="knob"></li>
+		<li id="knob"></li>
+		<li id="knob"></li>
+		</ul>
+	</div>
+
+	<div id="heading">
+		<h2><span><i>Akai </i></span>9000 XXL</h2>
+	</div>
+	<div id="sub-heading">
+		<h3>Drum Machine</h3>
+	</div>
+
+<FORM NAME="Calc">
+	<div id="frame">
+		<div id="mpc">
+			<div id="calculator">
+
+				<div id="input">
+					<input id="Cal" type="text" Name="Input">
+				</div>
+
+				<div id="flex-columns">
+
+					<div id="column1" class="box">
+
+						<div class="numbers">
+							<input type="button" id="number-one" Name="one" value="1" onclick="Input.value += '1' ">
+						</div>
+						<div class="numbers">
+							<input type="button" id="number-four" Name="four" value="4" onclick="Input.value += '4' ">
+						</div>
+						<div class="numbers">
+							<input type="button" id="number-seven" Name="seven" value="7" onclick="Input.value += '7' ">
+						</div>
+						<div class="numbers">
+							<input type="button" id="number-zero" Name="zero" value="0" onclick="Input.value += '0' ">
+						</div>
+					
+
+					</div>
+
+					<div id="column2" class="box">
+
+						<div class="numbers">
+							<input class="button" id="number-two" Name="two" type="button" value="2" onclick="Input.value += '2' ">
+						</div>
+						<div class="numbers">
+							<input class="button" id="number-five" Name="five" type="button" value="5" onclick="Input.value += '5' ">
+						</div>
+						<div class="numbers">
+							<input class="button" id="number-eight" Name="eight" type="button" value="8" onclick="Input.value += '8' ">
+						</div>
+						<div class="numbers">
+							<input class="button" id="clear" Name="clear" type="button" value="C" onclick="Input.value = '' ">
+						</div>
+
+
+					</div>
+
+					<div id="column3" class="box">
+						
+						<div class="numbers">
+							<input class="button" id="number-three" type="button" Name="three" value="3" onclick="Input.value += '3' ">
+						</div>
+						<div class="numbers">
+							<input class="button" id="number-six" type="button" Name="six" value="6" onclick="Input.value += '6' ">
+						</div>
+						<div class="numbers">
+							<input class="button" id="number-nine" type="button" Name="nine" value="9" onclick="Input.value += '9' ">
+						</div>
+						<div class="numbers">
+							<input class="button" type="button" id="equal" Name="equal" value="=" onclick="Calc.Input.value = eval(Calc.Input.value)">
+						</div>
+
+
+					</div>
+
+					<div id="column4" class="box">
+						
+						<div class="numbers">
+							<input class="button" type="button" id="plus" Name="plus" value="+" onclick="Input.value += '+' ">
+						</div>
+						<div class="numbers">
+							<input class="button" type="button" id="minus" Name="minus" value="-" onclick="Input.value += '-' ">
+						</div>
+						<div class="numbers">
+							<input class="button" type="button" id="divide" Name="divide" value="&#247" onclick="Input.value += '/' ">
+						</div>
+						<div class="numbers">
+							<input class="button" type="button" id="times" Name="times" value="x" onclick="Input.value += '*' ">
+						</div>
+
+					</div>
+
+					<div id="column4" class="box">
+						
+						<div class="numbers">
+							<input class="button" type="button" id="decimal" Name="plus" value="." onclick="Input.value += '.' ">
+						</div>
+						<div class="numbers">
+							<input class="button" type="button" id="avg-btn" Name="btn-avg" value="avg" onclick="average(); ">
+						</div>
+						<div class="numbers">
+							<input class="button" type="button" id="blank-btn" Name="divide" value=" ">
+						</div>
+						<div class="numbers">
+							<input class="button" type="button" id="blank-btn" Name="times" value=" ">
+						</div>
+
+					</div>
+
+				</div>
+			</div>	
+		</div>	
+	</div>
+</FORM>
+
+<div>
+	<audio autoplay="" hidden="" id="instrumental">
+		<source src="audio/instrumental.mp3" type="audio/mpeg">
+			If you are reading this, audio isn't supported. 
+	</audio>
+</div>
+
+<script type="text/javascript">
+
+function average() {
+	var q = eval(Calc.Input.value);
+	var num = Calc.Input.value;
+	num = num.split(/[+-/*]/);
+	var res = q / num.length;
+	Calc.Input.value = res;
+
+}
+
+var audio = document.getElementById("instrumental");
+audio.volume = 0.3;
+
+</script>
+
+
+
+</body>
+</html>
