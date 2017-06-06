@@ -487,7 +487,7 @@
 function average() {
 	var q = eval(Calc.Input.value);
 	var num = Calc.Input.value;
-	num = num.split(/[+-/*]/);
+	num = num.split("+");
 	var res = q / num.length;
 	Calc.Input.value = res;
 
